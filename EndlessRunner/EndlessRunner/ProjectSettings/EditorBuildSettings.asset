@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainLevel.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1d29a6438e97afa48a48cb491a52b0ee
+  - enabled: 1
+    path: Assets/Scenes/PortalTransition.unity
+    guid: 547320c4ba05a3c4382ab80aaa967a77
+  - enabled: 1
+    path: "Assets/Scenes/Pr\xE4historisch.unity"
+    guid: a920db7824c59404aad228d3dda9b1f0
+  - enabled: 1
+    path: Assets/Scenes/Mittelalter.unity
+    guid: 6a3c8e2f0416bc348a8633c00057b830
+  - enabled: 1
+    path: Assets/Scenes/Zukunft.unity
+    guid: f6992f6abf344ef45938945aff0d9390
   m_configObjects: {}
