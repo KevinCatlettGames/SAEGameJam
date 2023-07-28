@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CometPhysics : MonoBehaviour
 {
+    public GameObject Boom;
+
     public LayerMask ground;
     public LayerMask player;
 
@@ -22,6 +24,7 @@ public class CometPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         timer = 0f;
         rb.gravityScale = 0;
         directionX = Random.Range(-0.025f, 0.025f);
@@ -65,5 +68,13 @@ public class CometPhysics : MonoBehaviour
     {
         rb.AddForce(Vector2.right * directionX, ForceMode2D.Impulse);
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {  
+        if (collision.gameObject.tag == "Ground") 
+        {
+            Transform transform = rb.transform;
+            Instantiate(Boom, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
 }
