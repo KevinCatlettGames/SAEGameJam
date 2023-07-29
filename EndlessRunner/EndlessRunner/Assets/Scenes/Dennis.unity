@@ -619,6 +619,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1149440395, guid: 09b7de9b107fc994b8b51aec424561bf, type: 3}
+      propertyPath: OrbitalLaser
+      value: 
+      objectReference: {fileID: 3343551654174170142, guid: 9d7138e0d2775474eb4e2c17b1b41551,
+        type: 3}
     - target: {fileID: 2324615141130205308, guid: 09b7de9b107fc994b8b51aec424561bf,
         type: 3}
       propertyPath: m_RootOrder
