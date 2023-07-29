@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3222fd452258767498b25cba871811b5, type: 3}
-  m_Name: CometData
+  m_Name: Portal_Future
   m_EditorClassIdentifier: 
-  Obstacle: {fileID: 7840486996978952607, guid: 1d1b9a7f9c5840a4d940bb10b7bb4ecb,
+  Obstacle: {fileID: 7688384379981861634, guid: 3200dc77b5cd16145935b396432db6ef,
     type: 3}
-  MinX: -7
-  MaxX: 7
-  MinY: 7
-  MaxY: 7
+  MinX: 15
+  MaxX: 15
+  MinY: 5
+  MaxY: -5
   MinAmount: 1
-  MaxAmount: 3
+  MaxAmount: 1
   SpawnWeight: 1

@@ -48,7 +48,7 @@ public class ObstacleSpawner : MonoBehaviour
         for (int i = 0; i < spawnableObstacles.Length; i++)
         {
             if (i == lastSpawnedIndex) continue;
-            if (rnd >= weightRangeProgress && rnd <= weightRangeProgress + spawnableObstacles[i].SpawnWeight)
+            if (i == spawnableObstacles.Length-1||rnd >= weightRangeProgress && rnd <= weightRangeProgress + spawnableObstacles[i].SpawnWeight)
             {
                 chosenObstacle = spawnableObstacles[i];
                 lastSpawnedIndex = i;

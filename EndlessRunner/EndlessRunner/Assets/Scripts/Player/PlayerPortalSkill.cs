@@ -16,6 +16,7 @@ public class PlayerPortalSkill : MonoBehaviour
     [SerializeField] float skillDuration = 3;
 
     [SerializeField] GameObject LevelCanvas;
+    [SerializeField] GameObject portalObject;
     #endregion 
 
     private void Awake()
@@ -43,10 +44,9 @@ public class PlayerPortalSkill : MonoBehaviour
         {
             // Handle skill duration
             inSkill = true;
-            playerMana.SubtractMana(10);
+            playerMana.SubtractMana(40);
             StartCoroutine(UnlockSkillUsageCoroutine());
-
-            // TODO instantiate portal
+            Instantiate(portalObject, new Vector3(transform.position.x + 2, transform.position.y, transform.position.z), Quaternion.identity);
         }     
     }
 }

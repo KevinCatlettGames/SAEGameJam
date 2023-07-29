@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3222fd452258767498b25cba871811b5, type: 3}
-  m_Name: new ObstacleData
+  m_Name: PissVogel
   m_EditorClassIdentifier: 
-  Obstacle: {fileID: 0}
-  MinX: 0
-  MaxX: 0
-  MinY: 0
-  MaxY: 0
+  Obstacle: {fileID: 1989936922613990626, guid: 7945d85a51210094c987f026a22eb53c,
+    type: 3}
+  MinX: 10
+  MaxX: 10
+  MinY: 2
+  MaxY: 4
   MinAmount: 1
   MaxAmount: 1
   SpawnWeight: 1
