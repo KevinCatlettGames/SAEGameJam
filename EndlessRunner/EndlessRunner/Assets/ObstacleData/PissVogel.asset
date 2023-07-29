@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   MinX: 10
   MaxX: 10
-  MinY: 2
+  MinY: 0
   MaxY: 4
   MinAmount: 1
   MaxAmount: 1

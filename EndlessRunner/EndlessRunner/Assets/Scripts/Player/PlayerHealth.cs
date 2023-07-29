@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] PlayerPortalSkill playerPortalSkill;
 
     [SerializeField] Slider healthSlider;
+
+    [SerializeField] GameOverHandler gameOverHandler;
     #endregion
 
 
@@ -77,7 +79,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-
+        gameOverHandler.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
     #endregion
 }

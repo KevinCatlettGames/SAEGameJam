@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3222fd452258767498b25cba871811b5, type: 3}
-  m_Name: CometData
+  m_Name: Katapult
   m_EditorClassIdentifier: 
-  Obstacle: {fileID: 7840486996978952607, guid: 1d1b9a7f9c5840a4d940bb10b7bb4ecb,
+  Obstacle: {fileID: 8578678052316011126, guid: 55590e2796071754d81602744456cccf,
     type: 3}
-  MinX: -7
-  MaxX: 7
-  MinY: 7
-  MaxY: 9
+  MinX: 10
+  MaxX: 10
+  MinY: -4
+  MaxY: -4
   MinAmount: 1
-  MaxAmount: 3
+  MaxAmount: 1
   SpawnWeight: 1

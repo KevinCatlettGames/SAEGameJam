@@ -3,9 +3,9 @@ using UnityEngine;
 /// <summary>
 /// Makes the canvas a singleton that stays over scene loading. 
 /// </summary>
-public class LevelCanvasManager : MonoBehaviour
+public class CanvasManager : MonoBehaviour
 {
-    public static LevelCanvasManager Instance; 
+    public static CanvasManager Instance; 
 
     private void Awake()
     {
