@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Damage
+  - Mana
   layers:
   - Default
   - TransparentFX

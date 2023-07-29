@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Handles when the player gets damage by 2D and 3D collisions and holds the current amount of health the player has.
@@ -9,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
 {
     #region Variables 
     [SerializeField] int health = 3;
-    public int Health { get { return health; } }
+    public int Health { get { return health; } set { health = value; } }
 
 
     [SerializeField] float invincibilityTime = 3;
@@ -18,9 +19,19 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] PlayerArtHandler playerArtHandler;
     [SerializeField] PlayerPortalSkill playerPortalSkill;
+
+    [SerializeField] Slider healthSlider;
     #endregion
 
 
+    private void Awake()
+    {
+        if (healthSlider)
+        {
+            healthSlider.maxValue = health;
+            healthSlider.value = float.MaxValue;
+        }
+    }
     #region Methods 
     /// <summary>
     /// Subtracts health, activates invincibility and calls the Flickering method on the <see cref="PlayerArtHandler"/> 
@@ -35,6 +46,12 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         StartCoroutine(playerArtHandler.StartFlickering(invincibilityTime));
         StartCoroutine(EndInvinciblityCoroutine());
+
+        healthSlider.value = health;
+        if(health <= 0)
+        {
+            Die();
+        }
     }
 
     public IEnumerator EndInvinciblityCoroutine()
@@ -56,6 +73,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.tag == "Damage")
             SubtractHealth(1);
+    }
+
+    void Die()
+    {
+
     }
     #endregion
 }

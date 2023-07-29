@@ -15,11 +15,6 @@ public class PlayerPortalSkill : MonoBehaviour
 
     [SerializeField] float skillDuration = 3;
 
-    // The constant buildindex
-    public const int prehistoricIndex = 2;
-    public const int middleAgeIndex = 3;
-    public const int futureIndex = 4;
-
     [SerializeField] GameObject LevelCanvas;
     #endregion 
 
@@ -44,65 +39,14 @@ public class PlayerPortalSkill : MonoBehaviour
     private void ActivatePortal()
     {
         // Go back in time 
-        if (Input.GetKeyDown(KeyCode.Q) && !inSkill)
+        if (Input.GetKeyDown(KeyCode.E) && !inSkill && playerMana.Mana >= 10)
         {
             // Handle skill duration
             inSkill = true;
-            playerMana.SubtractMana(1);
-            StartCoroutine(UnlockSkillUsageCoroutine());
-            int nextIndex = 0;
-
-            // Handle scene choosing 
-            switch (SceneManager.GetActiveScene().buildIndex)
-            {
-                case prehistoricIndex:
-                    nextIndex = futureIndex;
-                    break;
-
-                case middleAgeIndex:
-                    nextIndex = prehistoricIndex;
-                    break;
-
-                case futureIndex:
-                    nextIndex = middleAgeIndex;
-                    break;
-
-                default:
-                    nextIndex = prehistoricIndex;
-                    break;
-            }
-            GameManager.Instance.TeleportToScene(nextIndex);
-        }
-
-        // Go forward in time 
-        else if (Input.GetKeyDown(KeyCode.E) && !inSkill)
-        {
-            // Handle Skill duration
-            inSkill = true;
-            playerMana.SubtractMana(1);
+            playerMana.SubtractMana(10);
             StartCoroutine(UnlockSkillUsageCoroutine());
 
-            // Handle scene choosing
-            int nextIndex = 0;
-            switch (SceneManager.GetActiveScene().buildIndex)
-            {
-                case prehistoricIndex:
-                    nextIndex = middleAgeIndex;
-                    break;
-
-                case middleAgeIndex:
-                    nextIndex = futureIndex;
-                    break;
-
-                case futureIndex:
-                    nextIndex = prehistoricIndex;
-                    break;
-
-                default:
-                    nextIndex = prehistoricIndex;
-                    break;
-            }
-            GameManager.Instance.TeleportToScene(nextIndex);
-        }
+            // TODO instantiate portal
+        }     
     }
 }

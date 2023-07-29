@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1603841069403472362}
   - component: {fileID: 6711997109609243469}
   - component: {fileID: -8995323820272625632}
+  - component: {fileID: 8527442473143416084}
   m_Layer: 0
   m_Name: Boom
   m_TagString: Damage
@@ -116,3 +117,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+--- !u!114 &8527442473143416084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023559657871178501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86e5e567ec1b124586ccd6e1c98aa93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goLeft: 1
