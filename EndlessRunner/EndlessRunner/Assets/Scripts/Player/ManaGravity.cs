@@ -5,15 +5,9 @@ using UnityEngine;
 
 public class ManaGravity : MonoBehaviour
 {
-    private Rigidbody rb;
     private float chaseSpeed = 1.0f;
     [SerializeField] private float accelerationFactor = 1.1f;
     private Transform targetPlayer = null;
-
-    private void Start()
-    {
-        rb = GetComponentInParent<Rigidbody>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
