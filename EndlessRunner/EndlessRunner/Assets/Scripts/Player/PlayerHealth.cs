@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 {
     #region Variables 
     [SerializeField] int health = 3;
-    public int Health { get { return health; } }
+    public int Health { get { return health; } set { health = value; } }
 
 
     [SerializeField] float invincibilityTime = 3;

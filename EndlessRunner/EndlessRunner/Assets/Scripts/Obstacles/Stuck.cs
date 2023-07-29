@@ -17,6 +17,7 @@ public class Stuck : MonoBehaviour
     void Start()
     {
         rb_main = GetComponent<Rigidbody>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class Stuck : MonoBehaviour
         }
         if (isStuckOnPlayer)
         {
-            gameObject.transform.position = playerTransform.position + vector3DistanceBetweenArrowAndPlayer;
+            gameObject.transform.position = playerTransform.position - vector3DistanceBetweenArrowAndPlayer;
         }
     }
     private void OnTriggerEnter(Collider other)
