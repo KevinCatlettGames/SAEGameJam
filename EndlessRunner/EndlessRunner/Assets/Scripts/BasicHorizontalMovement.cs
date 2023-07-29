@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Moves to the left or right depending on the given values. 
-public class BasicHorizontalMovement : MonoBehaviour
+public class BasicHorizontalMovement : MonoBehaviour, IObstacle
 {
     [SerializeField] bool goLeft = true;
 
