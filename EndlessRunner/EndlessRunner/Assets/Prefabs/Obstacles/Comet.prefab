@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1312160874511276948}
   - component: {fileID: 4768389219167167644}
   - component: {fileID: -3162167715747848526}
+  - component: {fileID: 3615586511306542857}
   m_Layer: 0
   m_Name: Comet
   m_TagString: Untagged
@@ -120,10 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6473dd95ad8dec74396b8a0d37366b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boom: {fileID: 0}
+  Boom: {fileID: 9023559657871178501, guid: 268369cbd10fd7e4493f4e3b7efb75fe, type: 3}
   ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   player:
     serializedVersion: 2
     m_Bits: 0
@@ -133,3 +134,19 @@ MonoBehaviour:
   timer: 0
   useMethodWaitBeforeFall: 1
   addForce: 0
+--- !u!58 &3615586511306542857
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840486996978952607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

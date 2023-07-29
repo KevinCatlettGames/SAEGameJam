@@ -1,60 +1,61 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles when the player gets damage by 2D and 3D collisions and holds the current amount of health the player has.
+/// Calls the Flickering method on <see cref="PlayerArtHandler"/> once damaged.
+/// </summary>
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 3;
-    public float invincibilityTime = 3;
-    public bool canTakeDamage = true;
-    public PlayerModelActivator playerModelActivator;
+    #region Variables 
+    [SerializeField] int health = 3;
+    public int Health { get { return health; } }
 
-    float invincibilityEffectSwitchDuration = .2f;
-    float startInvinciblityEffectSwitchDuration;
 
-    private void Awake()
+    [SerializeField] float invincibilityTime = 3;
+
+    bool canTakeDamage = true;
+
+    [SerializeField] PlayerArtHandler playerArtHandler;
+    [SerializeField] PlayerPortalSkill playerPortalSkill;
+    #endregion
+
+
+    #region Methods 
+    /// <summary>
+    /// Subtracts health, activates invincibility and calls the Flickering method on the <see cref="PlayerArtHandler"/> 
+    /// for a invincibility frames effect.
+    /// </summary>
+    /// <param name="amount"></param>
+    void SubtractHealth(int amount)
     {
-        startInvinciblityEffectSwitchDuration = invincibilityEffectSwitchDuration;
+        if (!canTakeDamage || playerPortalSkill.InSkill) return; 
+
+        Debug.Log("In subtract health");
+        health -= amount;
+        StartCoroutine(playerArtHandler.StartFlickering(invincibilityTime));
+        StartCoroutine(EndInvinciblityCoroutine());
     }
-    private void Update()
+
+    public IEnumerator EndInvinciblityCoroutine()
     {
-        if(canTakeDamage == false)
-        {
-            invincibilityEffectSwitchDuration -= Time.deltaTime;
-            if(invincibilityEffectSwitchDuration <= 0)
-            {
-                invincibilityEffectSwitchDuration = startInvinciblityEffectSwitchDuration;
-                playerModelActivator.activeObject.SetActive(!playerModelActivator.activeObject.activeSelf);
-            }
-        }
+        canTakeDamage = false;
+        yield return new WaitForSeconds(invincibilityTime);
+        canTakeDamage = true;
     }
+    #endregion 
+
+    #region Triggering
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Obstacle")
-        {
+        if(other.tag == "Damage")
             SubtractHealth(1);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Obstacle")
-        {
+        if(other.tag == "Damage")
             SubtractHealth(1);
-        }
     }
-
-    void SubtractHealth(int amount)
-    {
-        health -= amount;
-        StartCoroutine(InvincibilityCoroutine(invincibilityTime));
-    }
-
-    public IEnumerator InvincibilityCoroutine(float duration)
-    {
-        canTakeDamage = false; 
-        yield return new WaitForSeconds(duration);
-        canTakeDamage = true;
-        playerModelActivator.activeObject.SetActive(true);
-    }
+    #endregion
 }
