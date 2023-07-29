@@ -115,6 +115,7 @@ MonoBehaviour:
   inSkill: 0
   skillDuration: 3
   LevelCanvas: {fileID: 0}
+  portalObject: {fileID: 0}
 --- !u!54 &5636654943350671258
 Rigidbody:
   m_ObjectHideFlags: 0
