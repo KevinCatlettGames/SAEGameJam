@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDuration: 0.22
-  incrementAmount: 0.2
+  offsetChangeSpeed: 0.2
   maxVerticalPosition: 3.98
   minVerticalPosition: -1.5
   manaObject: {fileID: 336724161716322872, guid: 0846638d365b55644a80615b9ba67d55,
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ffc8b6fb08b5e2428177149962ccc06, type: 2}
   - {fileID: 11400000, guid: e2b5e66b279c0a349bf59c4e8e2af45b, type: 2}
   lastSpawnedIndex: 2147483647
-  timerLength: 2
+  timerLength: 1
   timerVariation: 0.75
 --- !u!4 &1036634199
 Transform:
