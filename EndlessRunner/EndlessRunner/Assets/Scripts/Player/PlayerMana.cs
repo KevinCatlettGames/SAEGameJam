@@ -44,6 +44,7 @@ public class PlayerMana : MonoBehaviour
         {
             AddMana(1);
             Destroy(collision.gameObject);
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
         }
     }
 
