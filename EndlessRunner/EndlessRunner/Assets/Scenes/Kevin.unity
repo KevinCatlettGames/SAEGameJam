@@ -655,6 +655,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898240860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6205234880319473425, guid: 2ce68a9456cdd824ca97857ccb986225,
+    type: 3}
+  m_PrefabInstance: {fileID: 6205234880835212622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1121295697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -938,6 +950,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 57831800, guid: c5fceb58e7d7a104ea6e980cb5c7f45c, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 898240860}
+    - target: {fileID: 1412508881, guid: c5fceb58e7d7a104ea6e980cb5c7f45c, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 898240860}
     - target: {fileID: 5636654943350671253, guid: c5fceb58e7d7a104ea6e980cb5c7f45c,
         type: 3}
       propertyPath: manaSlider

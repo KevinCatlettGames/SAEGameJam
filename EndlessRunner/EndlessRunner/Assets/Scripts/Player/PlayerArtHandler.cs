@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,7 +28,7 @@ public class PlayerArtHandler : MonoBehaviour
         SceneManager.sceneLoaded += SceneLoadedEvent;
 
         // TODO Change when which art is active depending on the currently loaded scene. (3D or 2D Art).
-        ActivateArt(spriteObject);
+        ActivateSprite();
 
         currentFlickerStateDuration = flickerStateDuration;
     }
@@ -76,11 +77,12 @@ public class PlayerArtHandler : MonoBehaviour
 
     void SceneLoadedEvent(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2) return;
+        if (SceneManager.GetActiveScene().buildIndex == 1) return;
 
         if(SceneManager.GetActiveScene().buildIndex == twoDIndex)
-        {
-            ActivateArt(spriteObject);           
+        {         
+            ActivateSprite();
+            return;
         }
         else
         {
@@ -88,31 +90,32 @@ public class PlayerArtHandler : MonoBehaviour
             {
                 if(SceneManager.GetActiveScene().buildIndex == index)
                 {
-                    ActivateArt(modelObject);
-
+                    ActivateModel();
                 }
             }
         }
     }
 
-    void ActivateArt(GameObject objectToActivate)
+    void ActivateSprite()
     {
-        if(objectToActivate == spriteObject && activeObject != objectToActivate)
-        {
-            Debug.Log("Activating sprite, deactivating model");
-            spriteObject.GetComponent<PlayerHealth>().Health = modelObject.GetComponent<PlayerHealth>().Health;
-            activeObject = objectToActivate;
-            spriteObject.SetActive(true);
-            modelObject.SetActive(false);
-        }
-        else if(objectToActivate == modelObject && activeObject != objectToActivate)
-        {
-            Debug.Log("Activating model, deactivating sprite");
-            modelObject.GetComponent<PlayerHealth>().Health = spriteObject.GetComponent<PlayerHealth>().Health;
-            activeObject = objectToActivate;
-            objectToActivate.SetActive(true);
-            spriteObject.SetActive(false);
-        }
+        if (activeObject == spriteObject) return; 
+
+        Debug.Log("Activating sprite, deactivating model");
+        spriteObject.GetComponent<PlayerHealth>().Health = modelObject.GetComponent<PlayerHealth>().Health;
+        activeObject = spriteObject;
+        spriteObject.SetActive(true);
+        modelObject.SetActive(false);
+    }
+
+    void ActivateModel()
+    {
+        if (activeObject == modelObject) return; 
+
+        Debug.Log("Activating model, deactivating sprite");
+        modelObject.GetComponent<PlayerHealth>().Health = spriteObject.GetComponent<PlayerHealth>().Health;
+        activeObject = modelObject;
+        activeObject.SetActive(true);
+        spriteObject.SetActive(false);
     }
 }
 

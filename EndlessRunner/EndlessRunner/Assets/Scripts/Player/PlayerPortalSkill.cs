@@ -39,14 +39,14 @@ public class PlayerPortalSkill : MonoBehaviour
     private void ActivatePortal()
     {
         // Go back in time 
-        if (Input.GetKeyDown(KeyCode.E) && !inSkill)
+        if (Input.GetKeyDown(KeyCode.E) && !inSkill && playerMana.Mana >= 10)
         {
             // Handle skill duration
             inSkill = true;
             playerMana.SubtractMana(10);
             StartCoroutine(UnlockSkillUsageCoroutine());
-          
-            GameManager.Instance.TeleportToScene(2);
+
+            // TODO instantiate portal
         }     
     }
 }
