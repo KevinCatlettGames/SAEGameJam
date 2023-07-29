@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
 
-public class CometPhysics : MonoBehaviour
+public class CometPhysics : MonoBehaviour, IObstacle
 {
     public GameObject Boom;
 
