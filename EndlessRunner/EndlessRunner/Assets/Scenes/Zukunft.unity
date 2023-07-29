@@ -130,14 +130,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 57831800, guid: c5fceb58e7d7a104ea6e980cb5c7f45c, type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1368929818}
     - target: {fileID: 1412508881, guid: c5fceb58e7d7a104ea6e980cb5c7f45c, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1368929818}
+    - target: {fileID: 3784667462528615952, guid: c5fceb58e7d7a104ea6e980cb5c7f45c,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5636654943350671253, guid: c5fceb58e7d7a104ea6e980cb5c7f45c,
         type: 3}
       propertyPath: manaSlider
