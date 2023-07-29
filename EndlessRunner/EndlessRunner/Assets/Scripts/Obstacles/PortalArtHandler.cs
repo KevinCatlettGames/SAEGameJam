@@ -6,6 +6,10 @@ public class PortalArtHandler : MonoBehaviour
 
     public GameObject twoDArt;
     public GameObject threeDArt;
+
+    public AudioSource audioS;
+    public AudioClip audioC;
+
     private void Start()
     {
         if(GameObject.FindGameObjectWithTag("Player"))
@@ -20,5 +24,7 @@ public class PortalArtHandler : MonoBehaviour
                 twoDArt.SetActive(false);
             }
         }
+
+        audioS.PlayOneShot(audioC);
     }
 }

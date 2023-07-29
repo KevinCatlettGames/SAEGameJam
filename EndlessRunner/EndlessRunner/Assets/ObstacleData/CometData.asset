@@ -19,5 +19,5 @@ MonoBehaviour:
   MinY: 7
   MaxY: 9
   MinAmount: 1
-  MaxAmount: 3
+  MaxAmount: 1
   SpawnWeight: 1
