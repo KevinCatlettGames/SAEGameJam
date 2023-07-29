@@ -72,10 +72,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mittelalter_Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 7688384380202583858, guid: 3200dc77b5cd16145935b396432db6ef,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.9099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688384380202583858, guid: 3200dc77b5cd16145935b396432db6ef,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.8174467
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688384380202583859, guid: 3200dc77b5cd16145935b396432db6ef,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 497492458, guid: d080feac4f88e4840af069a55ce63179,
+        type: 3}
     - target: {fileID: 7688384380202583860, guid: 3200dc77b5cd16145935b396432db6ef,
         type: 3}
       propertyPath: sceneToLoad
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688384380202583863, guid: 3200dc77b5cd16145935b396432db6ef,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.31903234
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688384380202583863, guid: 3200dc77b5cd16145935b396432db6ef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.31903234
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688384380202583863, guid: 3200dc77b5cd16145935b396432db6ef,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.31903234
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3200dc77b5cd16145935b396432db6ef, type: 3}

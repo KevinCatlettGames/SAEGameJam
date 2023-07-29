@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int health = 3;
     public int Health { get { return health; } set { health = value; } }
 
-
+    public AudioSource healthAudioS;
+    public AudioClip audioC;
     [SerializeField] float invincibilityTime = 3;
 
     bool canTakeDamage = true;
@@ -48,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         StartCoroutine(playerArtHandler.StartFlickering(invincibilityTime));
         StartCoroutine(EndInvinciblityCoroutine());
-
+        healthAudioS.PlayOneShot(audioC);
         healthSlider.value = health;
         if(health <= 0)
         {

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3222fd452258767498b25cba871811b5, type: 3}
   m_Name: Portal_Future
   m_EditorClassIdentifier: 
-  Obstacle: {fileID: 7688384379981861634, guid: 3200dc77b5cd16145935b396432db6ef,
+  Obstacle: {fileID: 6844084276785107346, guid: 81c900c57127f7e4a945f8087dfe90f1,
     type: 3}
   MinX: 15
   MaxX: 15
   MinY: 5
-  MaxY: -5
+  MaxY: -2
   MinAmount: 1
   MaxAmount: 1
   SpawnWeight: 1

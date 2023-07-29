@@ -72,6 +72,17 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6475173319453515982, guid: f1f9030b8052b1f4cacf7f8f379079d3,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.8999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475173319453515983, guid: f1f9030b8052b1f4cacf7f8f379079d3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2116065033, guid: d080feac4f88e4840af069a55ce63179,
+        type: 3}
     - target: {fileID: 7399207828329029748, guid: f1f9030b8052b1f4cacf7f8f379079d3,
         type: 3}
       propertyPath: sceneToLoad

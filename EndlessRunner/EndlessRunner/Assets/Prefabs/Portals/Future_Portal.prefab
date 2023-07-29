@@ -12,15 +12,51 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2693973086723015169, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.32654306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693973086723015169, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.32654306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693973086723015169, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.32654306
+      objectReference: {fileID: 0}
     - target: {fileID: 2693973086723015170, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
         type: 3}
       propertyPath: sceneToLoad
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2693973086723015172, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.8999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693973086723015172, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.8174467
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693973086723015173, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -342723401, guid: d080feac4f88e4840af069a55ce63179,
+        type: 3}
     - target: {fileID: 2693973087641048628, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
         type: 3}
       propertyPath: m_Name
       value: Future_Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693973087641048629, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2693973087641048630, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
         type: 3}
@@ -79,4 +115,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3203880262484780748, guid: b0e9445ebfd964b4a9720c2cdc4d2f86, type: 3}
+    - {fileID: 2693973087641048629, guid: b0e9445ebfd964b4a9720c2cdc4d2f86, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b0e9445ebfd964b4a9720c2cdc4d2f86, type: 3}
