@@ -10,6 +10,9 @@ public class Stuck : MonoBehaviour
     public bool isStuckOnPlayer = false;
     public Transform playerTransform;
 
+    //private float timer = 0;
+    //private bool isOnce = true;
+
     private Vector3 vector3DistanceBetweenArrowAndPlayer;
 
 
@@ -31,17 +34,31 @@ public class Stuck : MonoBehaviour
         {
             gameObject.transform.position = playerTransform.position - vector3DistanceBetweenArrowAndPlayer;
         }
+        //if (timer < 1)
+        //{
+        //    timer += Time.deltaTime;
+        //}
+        //if (timer >= 1)
+        //{
+        //    if (isOnce)
+        //    {
+        //        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+        //    }
+        //    isOnce = false;
+        //}
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ground")
         {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             GetComponent<Rotate>().enabled = false;
             rb_main.constraints = RigidbodyConstraints.FreezeAll;
             isFall = false;
         }
         if (other.gameObject.tag == "Player")
         {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             GetComponent<Rotate>().enabled = false;
             rb_main.constraints = RigidbodyConstraints.FreezeAll;
             isFall = false;
