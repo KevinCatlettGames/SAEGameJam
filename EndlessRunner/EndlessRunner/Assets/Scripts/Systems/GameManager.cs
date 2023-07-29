@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     #region LevelMovement
 
-    public float LevelScrollSpeed { get; set; }
+    public float LevelScrollSpeed { get; set; } = 2;
 
     #endregion
     
