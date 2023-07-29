@@ -22,8 +22,7 @@ public class GameManager : MonoBehaviour
     public float LevelScrollSpeed { get; set; } = 2;
 
     #endregion
-    
-    
+        
     // Start is called before the first frame update
     void Start()
     {

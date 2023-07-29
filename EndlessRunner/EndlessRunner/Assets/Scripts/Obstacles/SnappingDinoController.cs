@@ -7,14 +7,16 @@ using UnityEngine;
 public class SnappingDinoController : MonoBehaviour, IObstacle
 {   
     [SerializeField] Animator animator;
-    bool snapped; 
-
+    bool snapped;
+    public AudioSource audioS;
+    public AudioClip audioC;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player") && !snapped)
         {
             snapped = true;
             animator.SetTrigger("Snap");
+            audioS.PlayOneShot(audioC);
         }
     }
 }

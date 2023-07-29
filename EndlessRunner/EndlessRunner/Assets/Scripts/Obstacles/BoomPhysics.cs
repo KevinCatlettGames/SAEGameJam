@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BoomPhysics : MonoBehaviour
 {
+    public AudioSource audioS;
+    public AudioClip audioC;
+
     public float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0f;
+        audioS.PlayOneShot(audioC);
     }
 
     // Update is called once per frame
@@ -18,7 +22,7 @@ public class BoomPhysics : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer >= 2.5f)
+        if (timer >= 3f)
         {
             Destroy(gameObject);
         }

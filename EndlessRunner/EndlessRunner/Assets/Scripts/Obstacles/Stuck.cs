@@ -55,6 +55,7 @@ public class Stuck : MonoBehaviour
             GetComponent<Rotate>().enabled = false;
             rb_main.constraints = RigidbodyConstraints.FreezeAll;
             isFall = false;
+            Destroy(gameObject, 2f);
         }
         if (other.gameObject.tag == "Player")
         {
@@ -64,6 +65,7 @@ public class Stuck : MonoBehaviour
             isFall = false;
             isStuckOnPlayer = true;
             vector3DistanceBetweenArrowAndPlayer = playerTransform.position - gameObject.transform.position;
+            Destroy(gameObject, 2f);
         }
     }
 }
