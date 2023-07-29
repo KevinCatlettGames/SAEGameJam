@@ -3,13 +3,11 @@ using UnityEngine;
 public class ManaSpawner : MonoBehaviour
 {
     [SerializeField] float spawnDuration;
-    float initialSpawnDuation;
+    float initialSpawnDuration;
 
-    float verticalSpawnOffset = 0;
-
-    [SerializeField] float incrementAmount = 0.1f;
-
-    bool goUp;
+    float verticalSpawnOffset;
+    
+    [SerializeField] float offsetChangeSpeed = 0.2f;
 
     [SerializeField] float maxVerticalPosition;
     [SerializeField] float minVerticalPosition; 
@@ -17,8 +15,9 @@ public class ManaSpawner : MonoBehaviour
     [SerializeField] GameObject manaObject; 
     private void Awake()
     {
-        initialSpawnDuation = spawnDuration;
+        initialSpawnDuration = spawnDuration;
     }
+    
     private void Update()
     {
         Spawn();
@@ -30,27 +29,10 @@ public class ManaSpawner : MonoBehaviour
         if (spawnDuration <= 0)
         {
             // spawn
-            spawnDuration = initialSpawnDuation;
+            spawnDuration = initialSpawnDuration;
             Instantiate(manaObject, new Vector2(transform.position.x, transform.position.y + verticalSpawnOffset), Quaternion.identity);
 
-            if (goUp)
-            {
-                verticalSpawnOffset += incrementAmount;
-
-                if (verticalSpawnOffset > maxVerticalPosition)
-                {
-                    goUp = false;
-                }
-            }
-            else
-            {
-                verticalSpawnOffset -= incrementAmount;
-
-                if (verticalSpawnOffset < minVerticalPosition)
-                {
-                    goUp = true;
-                }
-            }         
+            verticalSpawnOffset = Mathf.Lerp(minVerticalPosition, maxVerticalPosition, Mathf.PerlinNoise(Time.time * offsetChangeSpeed, 0));
         }
     }
 }
