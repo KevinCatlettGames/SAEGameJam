@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour
     public int CurrentTargetScene { get; private set; }
 
     #endregion
+
+    #region LevelMovement
+
+    public float LevelScrollSpeed { get; set; }
+
+    #endregion
     
     
     // Start is called before the first frame update
