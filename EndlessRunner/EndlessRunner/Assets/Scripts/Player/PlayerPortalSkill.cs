@@ -17,6 +17,8 @@ public class PlayerPortalSkill : MonoBehaviour
 
     [SerializeField] GameObject LevelCanvas;
     [SerializeField] GameObject portalObject;
+    public AudioSource audioS;
+    public AudioClip audioC;
     #endregion 
 
     private void Awake()
@@ -47,6 +49,7 @@ public class PlayerPortalSkill : MonoBehaviour
             playerMana.SubtractMana(40);
             StartCoroutine(UnlockSkillUsageCoroutine());
             Instantiate(portalObject, new Vector3(transform.position.x + 2, transform.position.y, transform.position.z), Quaternion.identity);
+            audioS.PlayOneShot(audioC);
         }     
     }
 }

@@ -4,17 +4,17 @@ using UnityEngine;
 public class BasicHorizontalMovement : MonoBehaviour
 {
     [SerializeField] bool goLeft = true;
-
+    public float additionalSpeed; 
     // Update is called once per frame
     void Update()
     {
         if (goLeft)
         {
-            transform.Translate(Vector2.left * GameManager.Instance.LevelScrollSpeed * Time.deltaTime);
+            transform.Translate(Vector2.left * (additionalSpeed + GameManager.Instance.LevelScrollSpeed) * Time.deltaTime);
         }
         else if (!goLeft)
         {
-            transform.Translate(Vector2.right * GameManager.Instance.LevelScrollSpeed * Time.deltaTime);
+            transform.Translate(Vector2.right * (additionalSpeed + GameManager.Instance.LevelScrollSpeed) * Time.deltaTime);
         }
     }
 }

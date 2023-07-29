@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goLeft: 1
+  additionalSpeed: 4
 --- !u!65 &51232128206002326
 BoxCollider:
   m_ObjectHideFlags: 0
