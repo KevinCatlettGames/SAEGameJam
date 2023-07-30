@@ -9,6 +9,7 @@ public class TodesSternStrahlTheStarLaserLASER : MonoBehaviour
     private Rigidbody rb;
     private bool isLanded;
     private float timer;
+    private float offsetLaserVertical = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class TodesSternStrahlTheStarLaserLASER : MonoBehaviour
         {
             if(isLanded) 
             {
-                Vector3 laserSpawnPostion = new Vector3(transform.position.x, transform.position.y + 50, transform.position.z);
+                Vector3 laserSpawnPostion = new Vector3(transform.position.x, transform.position.y + offsetLaserVertical, transform.position.z);
                 Instantiate(OrbitalLaser, laserSpawnPostion, Quaternion.identity);
                 Destroy(gameObject);
             }
