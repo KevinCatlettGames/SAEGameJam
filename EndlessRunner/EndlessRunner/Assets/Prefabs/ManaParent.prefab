@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6493357297835180323}
   - component: {fileID: 51232128206002326}
   - component: {fileID: 2895171648255511787}
+  - component: {fileID: 730582552934067207}
   m_Layer: 0
   m_Name: ManaParent
   m_TagString: Mana
@@ -79,6 +80,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &730582552934067207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336724161716322872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0245d4638929f4ba9e1bd6c9294a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 10
 --- !u!1 &2295838262830514237
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
   m_Color: {r: 0, g: 0.8307626, b: 1, a: 1}

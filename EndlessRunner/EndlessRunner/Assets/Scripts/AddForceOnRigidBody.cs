@@ -8,6 +8,14 @@ public class AddForceOnRigidBody : MonoBehaviour
 
     public Rigidbody rigidBody;
     bool shot;
+
+    private void Awake()
+    {
+        if(!rigidBody)
+        {
+            rigidBody = GetComponent<Rigidbody>();
+        }
+    }
     private void FixedUpdate()
     {
         if (!shot)

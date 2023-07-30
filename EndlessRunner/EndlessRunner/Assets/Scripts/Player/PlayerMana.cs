@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerMana : MonoBehaviour
 {
-    [SerializeField] int mana = 50;
+    [SerializeField] int mana = 0;
 
     [SerializeField] Slider manaSlider;
     public int Mana { get { return mana; } }
@@ -16,14 +16,17 @@ public class PlayerMana : MonoBehaviour
     {
         if (manaSlider)
         {
-            manaSlider.maxValue = mana;
-            manaSlider.value = float.MaxValue;
+            manaSlider.maxValue = 100;
+            manaSlider.value = 0;
         }
     }
     public void AddMana(int amount)
     {
-        mana += amount;
-        UpdateSlider();
+        if (mana <= 99)
+        {
+            mana += amount;
+            UpdateSlider();
+        }
     }
     public void SubtractMana(int amount)
     {

@@ -4970,10 +4970,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 042fa0422a93769458c39a435e6c963f, type: 2}
   - {fileID: 11400000, guid: dd38f241932274c4d9348713d2f80951, type: 2}
   - {fileID: 11400000, guid: e8bdd8279fa427c49bc56cd384b33c6f, type: 2}
-  - {fileID: 11400000, guid: e8bdd8279fa427c49bc56cd384b33c6f, type: 2}
   lastSpawnedIndex: 2147483647
   timerLength: 1
   timerVariation: 0.2
+  subtractionAmount: 0.001
 --- !u!4 &405720011
 Transform:
   m_ObjectHideFlags: 0

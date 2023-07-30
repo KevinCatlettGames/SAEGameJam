@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2273592540385531448}
   - component: {fileID: 2273592540385531449}
   - component: {fileID: 6946433450178580133}
+  - component: {fileID: 6461244472816355677}
   m_Layer: 0
   m_Name: PlayerTeleportEffect
   m_TagString: Untagged
@@ -144,6 +145,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6461244472816355677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273592540385531446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0245d4638929f4ba9e1bd6c9294a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 4
 --- !u!1 &2273592541805665390
 GameObject:
   m_ObjectHideFlags: 0

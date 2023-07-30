@@ -30,8 +30,8 @@ public class ManaSpawner : MonoBehaviour
         {
             // spawn
             spawnDuration = initialSpawnDuration;
-            Instantiate(manaObject, new Vector2(transform.position.x, transform.position.y + verticalSpawnOffset), Quaternion.identity);
-
+            GameObject newObject = Instantiate(manaObject, new Vector2(transform.position.x, transform.position.y + verticalSpawnOffset), Quaternion.identity);
+            newObject.transform.parent = gameObject.transform;
             verticalSpawnOffset = Mathf.Lerp(minVerticalPosition, maxVerticalPosition, Mathf.PerlinNoise(Time.time * offsetChangeSpeed, 0));
         }
     }

@@ -10,7 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private float timerLength = 3.0f;
     [SerializeField] private float timerVariation = 0.75f;
     private float timer;
-
+    public float subtractionAmount = .001f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,7 @@ public class ObstacleSpawner : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            timerLength -= subtractionAmount;
             ChooseObstacle()?.SpawnObstacle();
             timer += timerLength + Random.Range(-timerVariation, timerVariation);
         }

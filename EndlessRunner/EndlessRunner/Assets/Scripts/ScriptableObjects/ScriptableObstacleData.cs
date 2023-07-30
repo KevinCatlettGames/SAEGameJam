@@ -28,7 +28,7 @@ public class ScriptableObstacleData : ScriptableObject
         {
             float xPos = Random.Range(MinX, MaxX);
             float yPos = Random.Range(MinY, MaxY);
-            Instantiate(Obstacle, new Vector3(xPos, yPos, 0.0f), quaternion.identity);
+            Instantiate(Obstacle, new Vector3(xPos, yPos, Obstacle.transform.position.z), quaternion.identity);
         }
     }
 }

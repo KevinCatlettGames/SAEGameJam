@@ -42,11 +42,11 @@ public class PlayerPortalSkill : MonoBehaviour
     private void ActivatePortal()
     {
         // Go back in time 
-        if (Input.GetKeyDown(KeyCode.E) && !inSkill && playerMana.Mana >= 10)
+        if (Input.GetKeyDown(KeyCode.E) && !inSkill && playerMana.Mana >= 100)
         {
             // Handle skill duration
             inSkill = true;
-            playerMana.SubtractMana(40);
+            playerMana.SubtractMana(100);
             StartCoroutine(UnlockSkillUsageCoroutine());
             Instantiate(portalObject, new Vector3(transform.position.x + 2, transform.position.y, transform.position.z), Quaternion.identity);
             audioS.PlayOneShot(audioC);

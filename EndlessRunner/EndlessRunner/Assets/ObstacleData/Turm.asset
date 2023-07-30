@@ -16,8 +16,8 @@ MonoBehaviour:
     type: 3}
   MinX: 10
   MaxX: 10
-  MinY: -2.84
-  MaxY: -2.84
+  MinY: -2.5
+  MaxY: -2.5
   MinAmount: 1
   MaxAmount: 1
   SpawnWeight: 1
