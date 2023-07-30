@@ -11,7 +11,7 @@ public class PlayerMana : MonoBehaviour
     [SerializeField] Slider manaSlider;
     public int Mana { get { return mana; } }
 
-    public int manaScore; 
+    public int manaScore;
 
     #region Methods 
     private void Start()

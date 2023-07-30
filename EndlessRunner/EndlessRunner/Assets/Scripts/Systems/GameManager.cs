@@ -61,8 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Cursor.visible = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMana>().ResetScore();
+        Cursor.visible = false;       
         SceneManager.LoadScene(2);
         GameObject.FindGameObjectWithTag("Player").transform.position = playerStartPos;
     }

@@ -157,9 +157,12 @@ public class PlayerArtHandler : MonoBehaviour
     public void DoReset()
     {
         spriteObject.GetComponent<SpriteRenderer>().enabled = true;
+        isFlickering = false; 
+
         modelObjectModelParentOne.SetActive(true);
         modelObjectModelParentTwo.SetActive(true);
         futureModelParent.SetActive(true);
+        flickerStateDuration = currentFlickerStateDuration;
     }
 }
 

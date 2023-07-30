@@ -18,19 +18,21 @@ public class GameOverHandler : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerArtHandler>().DoReset();
-        SceneManager.LoadScene(buildindex);
+        GameManager.Instance.RestartGame();
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
         gameObject.SetActive(false);
-
+        Destroy(CanvasManager.Instance.gameObject);
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
     }
 
     public void LoadManaCollectText(int amount)
     {
         text.text = "Your Score: " + amount.ToString();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMana>().ResetScore();
         Time.timeScale = 0;
     }
 }

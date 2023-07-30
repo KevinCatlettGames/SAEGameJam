@@ -21,6 +21,7 @@ public class PlayerPortalSkill : MonoBehaviour
     public AudioClip audioC;
     #endregion 
 
+    public bool devCheat;
     private void Awake()
     {
         playerMana = GetComponent<PlayerMana>();    
@@ -28,6 +29,15 @@ public class PlayerPortalSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.R) && devCheat)
+        {
+            // Handle skill duration
+            inSkill = true;
+            StartCoroutine(UnlockSkillUsageCoroutine());
+            Instantiate(portalObject, new Vector3(transform.position.x + 2, transform.position.y, transform.position.z), Quaternion.identity);
+            audioS.PlayOneShot(audioC);
+        }
+
         ActivatePortal();         
     }
 
