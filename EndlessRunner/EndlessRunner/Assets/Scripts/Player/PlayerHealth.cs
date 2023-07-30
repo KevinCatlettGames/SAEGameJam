@@ -51,6 +51,10 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(EndInvinciblityCoroutine());
         healthAudioS.PlayOneShot(audioC);
         healthSlider.value = health;
+        if(health == 1)
+        {
+            healthSlider.value = 0.85f;
+        }
         if(health <= 0)
         {
             Die();
