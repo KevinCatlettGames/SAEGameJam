@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1852186476018556797, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1878495538347557566, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
         type: 3}
       propertyPath: sceneToLoad
@@ -111,6 +116,16 @@ PrefabInstance:
     - target: {fileID: 2693973087641048630, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946055499421650828, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143618418215160095, guid: b0e9445ebfd964b4a9720c2cdc4d2f86,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

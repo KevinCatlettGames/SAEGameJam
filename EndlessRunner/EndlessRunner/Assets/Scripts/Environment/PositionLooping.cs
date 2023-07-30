@@ -16,7 +16,7 @@ public class PositionLooping : MonoBehaviour
     {
         if (transform.position.x <= positionToMoveFrom)
         {
-            transform.position = new Vector2(positionToMoveTo, transform.position.y);
+            transform.position = new Vector3(positionToMoveTo, transform.position.y, transform.position.z);
         }
     }
 }

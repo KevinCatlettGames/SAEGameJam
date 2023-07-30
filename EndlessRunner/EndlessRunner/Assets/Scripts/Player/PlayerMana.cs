@@ -11,18 +11,21 @@ public class PlayerMana : MonoBehaviour
     [SerializeField] Slider manaSlider;
     public int Mana { get { return mana; } }
 
+    public int manaScore; 
+
     #region Methods 
     private void Start()
     {
         if (manaSlider)
         {
-            manaSlider.maxValue = 100;
+            manaSlider.maxValue = 300;
             manaSlider.value = 0;
         }
     }
     public void AddMana(int amount)
     {
-        if (mana <= 99)
+        manaScore += 1;
+        if (mana <= 299)
         {
             mana += amount;
             UpdateSlider();
@@ -49,6 +52,13 @@ public class PlayerMana : MonoBehaviour
             Destroy(collision.gameObject);
             GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
         }
+    }
+
+    public void ResetScore()
+    {
+        manaScore = 0;
+        mana = 0;
+        UpdateSlider();
     }
 
     

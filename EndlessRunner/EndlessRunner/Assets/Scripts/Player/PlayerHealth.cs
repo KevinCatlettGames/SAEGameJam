@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] PlayerArtHandler playerArtHandler;
     [SerializeField] PlayerPortalSkill playerPortalSkill;
 
-    [SerializeField] Slider healthSlider;
+    [SerializeField] public Slider healthSlider;
 
     [SerializeField] GameOverHandler gameOverHandler;
     #endregion
@@ -80,8 +80,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        gameOverHandler.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        Cursor.visible = true;
+        gameOverHandler.gameObject.SetActive(true);   
+        gameOverHandler.LoadManaCollectText(GetComponentInParent<PlayerMana>().manaScore);
+        health = 3;
+        healthSlider.value = 3;
     }
     #endregion
 }

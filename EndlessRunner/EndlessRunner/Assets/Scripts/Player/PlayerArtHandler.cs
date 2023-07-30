@@ -10,12 +10,19 @@ using UnityEngine.SceneManagement;
 public class PlayerArtHandler : MonoBehaviour
 {
     public GameObject modelObject;
+    public GameObject modelObjectModelParentOne;
+    public GameObject modelObjectModelParentTwo;
+
     public GameObject spriteObject;
 
     public GameObject activeObject;
 
+
+    public GameObject futureModel;
+    public GameObject futureModelParent;
     public int twoDIndex = 3;
-    public int[] threeDIndex; 
+    public int threeDIndex;
+    public int futureIndex;
     #region Flickering
     public bool isFlickering;
     float flickerStateDuration = .2f;
@@ -28,14 +35,14 @@ public class PlayerArtHandler : MonoBehaviour
         SceneManager.sceneLoaded += SceneLoadedEvent;
 
         // TODO Change when which art is active depending on the currently loaded scene. (3D or 2D Art).
-        ActivateSprite();
+        SceneLoadedEvent(SceneManager.GetActiveScene(), LoadSceneMode.Single);
 
         currentFlickerStateDuration = flickerStateDuration;
     }
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= SceneLoadedEvent; 
+        SceneManager.sceneLoaded -= SceneLoadedEvent;
     }
 
     private void Update()
@@ -44,27 +51,33 @@ public class PlayerArtHandler : MonoBehaviour
     }
     private void Flicker()
     {
-        if (!isFlickering) return; 
-        
+        if (!isFlickering) return;
+
         flickerStateDuration -= Time.deltaTime;
-        
+
         if (flickerStateDuration <= 0)
         {
             flickerStateDuration = currentFlickerStateDuration;
-            if (activeObject.GetComponent<SpriteRenderer>())
+            if (activeObject == spriteObject)
             {
                 activeObject.GetComponent<SpriteRenderer>().enabled = !activeObject.GetComponent<SpriteRenderer>().enabled;
             }
-            else if (activeObject.GetComponent<MeshRenderer>())
+            else if (activeObject == modelObject)
             {
-                activeObject.GetComponent<MeshRenderer>().enabled = !activeObject.GetComponent<MeshRenderer>().enabled;
+                modelObjectModelParentOne.SetActive(!modelObjectModelParentOne.activeSelf);
+                modelObjectModelParentTwo.SetActive(!modelObjectModelParentTwo.activeSelf);
             }
-        }       
+            else if (activeObject == futureModel)
+            {
+                futureModelParent.SetActive(!futureModelParent.activeSelf);
+            }
+
+        }
     }
 
     public IEnumerator StartFlickering(float duration)
     {
-        isFlickering = true; 
+        isFlickering = true;
         yield return new WaitForSeconds(duration);
         isFlickering = false;
 
@@ -79,43 +92,74 @@ public class PlayerArtHandler : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 1) return;
 
-        if(SceneManager.GetActiveScene().buildIndex == twoDIndex)
-        {         
+        if (SceneManager.GetActiveScene().buildIndex == twoDIndex)
+        {
             ActivateSprite();
             return;
         }
-        else
+        else if (SceneManager.GetActiveScene().buildIndex == threeDIndex)
         {
-            foreach(int index in threeDIndex)
-            {
-                if(SceneManager.GetActiveScene().buildIndex == index)
-                {
-                    ActivateModel();
-                }
-            }
+            Activate3DModel();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == futureIndex)
+        {
+            ActivateFutureModel();
         }
     }
 
     void ActivateSprite()
     {
-        if (activeObject == spriteObject) return; 
+        if (activeObject == spriteObject) return;
 
         Debug.Log("Activating sprite, deactivating model");
-        spriteObject.GetComponent<PlayerHealth>().Health = modelObject.GetComponent<PlayerHealth>().Health;
+        if (activeObject)
+            spriteObject.GetComponent<PlayerHealth>().Health = activeObject.GetComponent<PlayerHealth>().Health;
+
         activeObject = spriteObject;
         spriteObject.SetActive(true);
         modelObject.SetActive(false);
+        futureModel.SetActive(false);
+
     }
 
-    void ActivateModel()
+    void Activate3DModel()
     {
-        if (activeObject == modelObject) return; 
+        if (activeObject == modelObject) return;
 
         Debug.Log("Activating model, deactivating sprite");
-        modelObject.GetComponent<PlayerHealth>().Health = spriteObject.GetComponent<PlayerHealth>().Health;
+        if (activeObject)
+            modelObject.GetComponent<PlayerHealth>().Health = activeObject.GetComponent<PlayerHealth>().Health;
+
         activeObject = modelObject;
         activeObject.SetActive(true);
         spriteObject.SetActive(false);
+        futureModel.SetActive(false);
+        modelObjectModelParentOne.SetActive(true);
+        modelObjectModelParentTwo.SetActive(true);
+    }
+
+    void ActivateFutureModel()
+    {
+        if (activeObject == futureModel) return;
+
+        Debug.Log("Activating future model, deactivating sprite and 3dmodel");
+        if (activeObject)
+        {
+            futureModel.GetComponent<PlayerHealth>().Health = activeObject.GetComponent<PlayerHealth>().Health;
+        }
+        activeObject = futureModel;
+        activeObject.SetActive(true);
+        spriteObject.SetActive(false);
+        modelObject.SetActive(false);
+        futureModelParent.SetActive(true);
+    }
+
+    public void DoReset()
+    {
+        spriteObject.GetComponent<SpriteRenderer>().enabled = true;
+        modelObjectModelParentOne.SetActive(true);
+        modelObjectModelParentTwo.SetActive(true);
+        futureModelParent.SetActive(true);
     }
 }
 

@@ -9,7 +9,7 @@ public class OrbitalLaserRemove : MonoBehaviour
     void Start()
     {
         timer = 0f;
-        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+      //  GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
     }
 
     // Update is called once per frame

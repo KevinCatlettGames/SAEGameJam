@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDuration: 0.1
-  offsetChangeSpeed: 0.2
+  offsetChangeSpeed: 0.56
   maxVerticalPosition: 3.98
   minVerticalPosition: -1.5
   manaObject: {fileID: 336724161716322872, guid: 0846638d365b55644a80615b9ba67d55,

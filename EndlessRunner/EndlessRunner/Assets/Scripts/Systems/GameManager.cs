@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public static Vector3 playerStartPos; 
     #region SceneManagement
 
     public const int TransitionSceneIndex = 1; // Change this if portal scene index changes
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(this);
+
+        playerStartPos = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
     // Update is called once per frame
@@ -54,5 +57,13 @@ public class GameManager : MonoBehaviour
         currentSceneLoadingOperation = SceneManager.LoadSceneAsync(TransitionSceneIndex);
         
         currentSceneLoadingOperation.completed += _ => { Debug.Log("Loaded Portal Scene"); /*SceneManager.UnloadSceneAsync(CurrentOriginScene);*/ };
+    }
+
+    public void RestartGame()
+    {
+        Cursor.visible = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMana>().ResetScore();
+        SceneManager.LoadScene(2);
+        GameObject.FindGameObjectWithTag("Player").transform.position = playerStartPos;
     }
 }

@@ -7,7 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
+        Time.timeScale = 1;
+        Cursor.visible = false;
         SceneManager.LoadScene(2);
+        
     }
     public void ExitGame()
     {
