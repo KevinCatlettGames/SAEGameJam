@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.SocialPlatforms;
 
-public class ElectricityBall : MonoBehaviour
+public class SniperLaser : MonoBehaviour
 {
+    [HideInInspector] public Sniper parent;
     private float timer;
-    public Transform transformCarPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +20,17 @@ public class ElectricityBall : MonoBehaviour
     {
         Move();
         timer += Time.deltaTime;
-        if (timer > 1)
+        if (timer > 2)
         {
             Destroy(gameObject);
         }
     }
     private void Move()
     {
-        gameObject.transform.Translate(Vector3.right * -2 * Time.deltaTime);
+        if(parent != null)
+        {
+            transform.position = parent.gameObject.transform.position;
+        }
     }
+
 }
