@@ -27,7 +27,7 @@ public class TodesSternStrahlTheStarLaserLASER : MonoBehaviour
         {
             if(isLanded) 
             {
-                Vector3 laserSpawnPostion = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
+                Vector3 laserSpawnPostion = new Vector3(transform.position.x, transform.position.y + 50, transform.position.z);
                 Instantiate(OrbitalLaser, laserSpawnPostion, Quaternion.identity);
                 Destroy(gameObject);
             }
