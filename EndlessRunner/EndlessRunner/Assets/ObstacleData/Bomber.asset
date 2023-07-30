@@ -20,4 +20,4 @@ MonoBehaviour:
   MaxY: 4
   MinAmount: 1
   MaxAmount: 1
-  SpawnWeight: 0.5
+  SpawnWeight: 0.2

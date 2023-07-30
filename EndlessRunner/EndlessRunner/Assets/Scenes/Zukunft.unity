@@ -26136,12 +26136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableObstacles:
-  - {fileID: 11400000, guid: 4d30d55044d2fce479e12cd0779c36f5, type: 2}
+  - {fileID: 11400000, guid: 2226026d0d7434043bba50ac16cd6ff8, type: 2}
   - {fileID: 11400000, guid: d868b6b4ec58e59438aa8cac52d2416f, type: 2}
   - {fileID: 11400000, guid: c26a27f9e08024b48a66d605db5ac269, type: 2}
-  - {fileID: 11400000, guid: 2226026d0d7434043bba50ac16cd6ff8, type: 2}
   lastSpawnedIndex: 2147483647
-  timerLength: 2
+  timerLength: 3
   timerVariation: 0.75
   subtractionAmount: 0.001
 --- !u!4 &786545226
