@@ -13,6 +13,7 @@ public class TodesSternStrahlTheStarLaserLASER : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.AddForce(new Vector3(Random.Range(-200,200),0));
     }
 
     // Update is called once per frame
@@ -26,7 +27,8 @@ public class TodesSternStrahlTheStarLaserLASER : MonoBehaviour
         {
             if(isLanded) 
             {
-                Instantiate(OrbitalLaser, transform.position, Quaternion.identity);
+                Vector3 laserSpawnPostion = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
+                Instantiate(OrbitalLaser, laserSpawnPostion, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
