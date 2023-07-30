@@ -9,6 +9,7 @@ public class SniperLaser : MonoBehaviour
 {
     [HideInInspector] public Sniper parent;
     private float timer;
+
     // Start is called before the first frame update
     void Start()
     {

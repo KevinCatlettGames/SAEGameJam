@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class Speeder : MonoBehaviour
 {
-    private Transform transform;
+    private Transform myTransform;
     public Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
-        transform = GetComponent<Transform>();
+        myTransform = GetComponent<Transform>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

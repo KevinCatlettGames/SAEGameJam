@@ -22,6 +22,7 @@ public class PlayerMana : MonoBehaviour
         {
             manaSlider.maxValue = 300;
             manaSlider.value = 0;
+            if(fillObject)
             fillColor = fillObject.GetComponent<Image>().color;
         }
     }

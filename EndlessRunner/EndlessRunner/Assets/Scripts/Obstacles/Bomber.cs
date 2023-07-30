@@ -24,7 +24,7 @@ public class Bomber : MonoBehaviour
         {
             Destroy(gameObject);   
         }
-        if (timer > 2.5)
+        if (timer > 6)
         {
             Instantiate(tacticalMicrowave, gameObject.transform.position, Quaternion.identity);
             timer = Random.Range(0, 2);

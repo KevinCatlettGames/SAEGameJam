@@ -1849,7 +1849,7 @@ MonoBehaviour:
   lastSpawnedIndex: 2147483647
   timerLength: 1
   timerVariation: 0.75
-  subtractionAmount: 0.001
+  subtractionAmount: 0.01
 --- !u!4 &1036634199
 Transform:
   m_ObjectHideFlags: 0

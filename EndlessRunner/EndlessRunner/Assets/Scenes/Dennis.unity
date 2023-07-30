@@ -652,11 +652,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 967224309, guid: 70f28541ccdf2e4419fb483c52674c3d, type: 3}
-      propertyPath: SniperLaser
-      value: 
-      objectReference: {fileID: 8555454349282260257, guid: 84ac1c32f51042843b0f1508f8c11295,
-        type: 3}
     - target: {fileID: 4877536398578709035, guid: 70f28541ccdf2e4419fb483c52674c3d,
         type: 3}
       propertyPath: m_Name

@@ -6,8 +6,9 @@ public class Sniper : MonoBehaviour
 {
     public SniperLaser SniperLaser;
     private float timer;
-    
-    
+
+    public AudioSource audioS;
+    public AudioClip audioC;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +23,15 @@ public class Sniper : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > 4)
         {
-            Vector3 vector3 = new Vector3(Random.Range(-90, 90), Random.Range(0, 90));
+            Vector3 vector3 = new Vector3(Random.Range(-90, 90), Random.Range(20, 90));
             SniperLaser temp = Instantiate(SniperLaser, gameObject.transform.position, Quaternion.LookRotation(vector3));
+            audioS.PlayOneShot(audioC);
             temp.parent = this;
             timer = Random.Range(0, 3);
         }
     }
     private void Move()
     {
-        gameObject.transform.Translate(Vector3.right  * Time.deltaTime);
+        gameObject.transform.Translate(Vector3.left  * Time.deltaTime);
     }
 }
