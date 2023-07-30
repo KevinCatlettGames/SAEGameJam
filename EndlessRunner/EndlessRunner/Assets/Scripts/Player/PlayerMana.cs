@@ -9,6 +9,8 @@ public class PlayerMana : MonoBehaviour
     [SerializeField] int mana = 0;
 
     [SerializeField] Slider manaSlider;
+    [SerializeField] GameObject fillObject;
+    Color fillColor; 
     public int Mana { get { return mana; } }
 
     public int manaScore;
@@ -20,10 +22,14 @@ public class PlayerMana : MonoBehaviour
         {
             manaSlider.maxValue = 300;
             manaSlider.value = 0;
+            fillColor = fillObject.GetComponent<Image>().color;
         }
     }
     public void AddMana(int amount)
     {
+        fillObject.GetComponent<Image>().color = Color.white;
+        Invoke("Recolor", .2f);
+
         manaScore += 1;
         if (mana <= 299)
         {
@@ -61,6 +67,9 @@ public class PlayerMana : MonoBehaviour
         UpdateSlider();
     }
 
-    
+    void Recolor()
+    {
+        fillObject.GetComponent<Image>().color = fillColor;
+    }
     #endregion
 }

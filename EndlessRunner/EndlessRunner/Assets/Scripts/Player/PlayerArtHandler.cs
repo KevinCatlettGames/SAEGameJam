@@ -82,10 +82,19 @@ public class PlayerArtHandler : MonoBehaviour
         isFlickering = false;
 
         // Makes sure the currently active objects art is definetly enables after flickering. 
-        if (activeObject.GetComponent<SpriteRenderer>())
+        if (activeObject == spriteObject)
             activeObject.GetComponent<SpriteRenderer>().enabled = true;
-        else if (activeObject.GetComponent<MeshRenderer>())
-            activeObject.GetComponent<MeshRenderer>().enabled = true;
+        else if (activeObject == modelObject)
+        {
+            modelObjectModelParentOne.SetActive(true);
+            modelObjectModelParentTwo.SetActive(true);
+        }
+        else if(activeObject == futureModel)
+        {
+            futureModelParent.SetActive(true);
+        }
+         
+
     }
 
     void SceneLoadedEvent(Scene scene, LoadSceneMode loadSceneMode)

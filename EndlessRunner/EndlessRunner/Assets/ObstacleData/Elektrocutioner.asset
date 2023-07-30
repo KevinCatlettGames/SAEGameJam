@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3222fd452258767498b25cba871811b5, type: 3}
-  m_Name: Raumschiff_2
+  m_Name: Elektrocutioner
   m_EditorClassIdentifier: 
   Obstacle: {fileID: 7778194435559197469, guid: 6aef0f88c1f3097449c5111f5cdfb736,
     type: 3}
